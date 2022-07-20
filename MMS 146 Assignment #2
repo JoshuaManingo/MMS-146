@@ -1,0 +1,126 @@
+# The Dog Class
+class Dog:
+	def __init__(self, n, b, l, m, t, g, h):
+		self.name = n
+		self.breed = b
+		self.lonely = l
+		self.meal = m
+		self.thirsty = t
+		self.gender = g
+		self.hungry = h
+
+	def give_name(self):
+		self.name = self.name + self.gender
+
+	def feed(self):
+		self.hungry = self.meal + self.hungry
+		
+	def define_breed(self):
+	    self.breed = "Breed: " + self.breed
+	    
+	def change_drink(self,t):
+	    self.thirsty = "Change it to " + t + " sometimes" # the "t" will be replaceable
+	    
+	def lonely_dog(self):
+	    self.lonely = "Give " + self.name + " " + self.lonely 
+	    
+''' 
+This class shows a dog example and some basic information about it
+The attributes contains information defining the dog as well as what it is feeling
+The attributes are combined through methods to create informational texts
+
+'''
+
+# The Cellphone Class
+
+class Cellphone:
+	def __init__(self, b, v, rp, rg, bn):
+		self.battery = b
+		self.volume = v
+		self.repair = rp
+		self.register = rg
+		self.brand = bn
+		
+	def define_brand(self):
+	    self.brand = "The Cellphone's Brand: " + self.brand
+	    
+	def consume_battery(self):
+	    self.battery = self.battery - 19 # used 19 to result 1% battery instead of 0 to multiply the value
+
+	def healthy_battery(self):
+		self.battery = self.battery * 100 # used 100 as it is the maximum healthy battery percentage
+
+	def decrease_volume(self):
+		self.volume = self.volume - 4 # the volumes follow the same concept as the battery percentage
+		
+	def increase_volume(self):
+	    self.volume = self.volume * 10 
+	    
+	def repair_phone(self,rp):
+	    self.repair = rp + " it yourself" # repair and register methods have replaceable parameters
+	    
+	def register_phone(self):
+	    self.register = "Watch " + self.register
+	    
+''' 
+This class shows a cellphone example and showcases value-based features such as volume and battery percentage
+The attributes contains information about these features as well as possible cellphone 
+concerns such as broken and unregistered devices
+'''
+
+
+
+
+# The Main Program
+
+dog1 = Dog("Pixie", " German Shepherd", "some cuddles", "dog food "," water", " Girl", "at least 2 times a day" )
+
+print ("The Dog Class")
+
+print() # added this for space
+
+print ("The Dog's Nickname: ", dog1.name)
+dog1.give_name()
+print ("The Dog's Full Name: ", dog1.name)
+dog1.define_breed()
+print (dog1.breed)
+dog1.feed()
+print(dog1.name, "must be given",dog1.hungry )
+print("Give it some", dog1.thirsty,"when thirsty")
+dog1.change_drink("milk")
+print (dog1.thirsty)
+dog1.lonely_dog()
+print (dog1.lonely)
+
+print()
+print("---------------------------") # added this for division of classes
+
+phone1 = Cellphone( 20, 5, "Seek professional help", "online tutorials", "OPPO")
+
+print("The Cellphone Class")
+
+print() # added this for space
+
+phone1.define_brand()
+print (phone1.brand)
+print ("Battery Percentage Before Using the Cellphone: ", phone1.battery, "%")
+phone1.consume_battery()
+print ("Battery Percentage After Using the Cellphone: ", phone1.battery, "%")
+phone1.healthy_battery()
+print ("Battery Percentage After Charging the Cellphone: ",phone1.battery, "%")
+print ("The Cellphone's Current Volume: ", phone1.volume)
+phone1.decrease_volume()
+print ("The Cellphone's Volume After Decreasing: ", phone1.volume)
+phone1.increase_volume()
+print ("The Cellphone's Volume After Increasing: ", phone1.volume)
+print ("If the Cellphone is broken: ", phone1.repair )
+phone1.repair_phone("repair")
+print ("    Or ", phone1.repair)
+phone1.register_phone()
+print ("To Register the Cellphone: ", phone1.register)
+
+
+
+
+
+
