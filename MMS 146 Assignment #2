@@ -121,6 +121,31 @@ class Color:
     def add_black(self):
         self.shade = self.shade + 1 
 	
+
+# The Plant Class
+
+class Plant: 
+    def __init__(self,t,l,s,p,f): 
+        self.type = t 
+        self.leaves = l 
+        self.soil = s
+        self.pot = p 
+        self.fruit = f 
+    
+    def sunlight(self): 
+        self.type = self.type + " = " + "full sun"
+    
+    def fertilize(self): 
+        self.leaves = self.leaves * 1 
+    
+    def water(self): 
+        self.soil = self.soil * 3 
+        
+    def seeds(self): 
+        self.pot = self.pot * 5
+        
+    def harvest(self): 
+        self.fruit = self.fruit - 10 
 	
 	
 
@@ -185,7 +210,7 @@ print("---------------------------") # added this for division of classes
 
 cooking1 = Cooking ("Sinigang ", 1, 10, 0, 0)
         
-print("The Cellphone Class")
+print("The Cooking Class")
  
 cooking1.food_name() #this first then print 
 print ("Recipe name: ",cooking1.name) 
@@ -237,4 +262,34 @@ Attributes and methods for colors were influenced by the color wheel. To create 
 """
 
 
+print()
+print("---------------------------") # added this for division of classes
+
+
+# The Plant Class
+
+#plant1 = Plant("Pothos", l, s, p, f)
+plant1 = Plant("Pothos", 1, 1, 2, 25)
+
+print("The Color Class")
+
+plant1.sunlight()
+print("Amount of sunlight for ", plant1.type)
+
+plant1.fertilize()
+print("When color of leaves changes, fertilize for", plant1.leaves, "x every other week")
+
+plant1.water()
+print("Water plant", plant1.soil, "x a week")
+
+plant1.seeds()
+print("Sow", plant1.pot, "seeds per container pot")
+
+plant1.harvest()
+print("Harvest", plant1.fruit, "ripe fruits when the plant produces")
+
+
+"""
+This class's attributes and methods demonstrate the fundamentals of planting and what a plant possesses. The methods mostly include the basic planting process, from preparation through harvesting. The methods are regulated by the plant's attributes. A plant that cannot grow fruits, for example, will render the method "plant.harvest fruit()" worthless and irrelevant in the code.
+"""
 
