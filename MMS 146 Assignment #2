@@ -68,10 +68,66 @@ The attributes contains information about these features as well as possible cel
 concerns such as broken and unregistered devices
 '''
 
+# The Cooking Class
+
+class Cooking: 
+    def __init__(self,n,s,st,t,o): 
+        self.name = n
+        self.sour = s
+        self.salty = st 
+        self.time = t 
+        self.tools = o 
+        
+    def food_name(self):
+        self.name = self.name + "na baboy "
+    
+    def add_sugar(self): 
+        self.sour = self.sour + 2 
+        
+    def add_water(self):
+        self.salty = self.salty + 5 
+        
+    def meal_prep(self):
+        self.time = self.time + 20 
+        #time of meal prep 
+    
+    def pan_amount(self): 
+        self.tools = self.tools + 2 
+        #number of pan that will be used 
 
 
+#The Color Class
+
+class Color: 
+    def __init__(self,g,o,p,t,s): 
+        self.green = g
+        self.orange = o 
+        self.purple = p 
+        self.tint = t 
+        self.shade = s 
+    
+    def blue_yellow(self): 
+        self.green = self.green + " = " + "blue + yellow"
+    
+    def yellow_red(self):
+        self.orange = self.orange + " = "  + "yellow + red"
+        
+    def red_blue(self):
+        self.purple = self.purple + " = " + "red + blue"
+        
+    def add_white(self):
+        self.tint = self.tint + 5 
+    
+    def add_black(self):
+        self.shade = self.shade + 1 
+	
+	
+	
 
 # The Main Program
+
+
+#The Dog Class
 
 dog1 = Dog("Pixie", " German Shepherd", "some cuddles", "dog food "," water", " Girl", "at least 2 times a day" )
 
@@ -94,6 +150,8 @@ print (dog1.lonely)
 
 print()
 print("---------------------------") # added this for division of classes
+
+# The Cellphone Class
 
 phone1 = Cellphone( 20, 5, "Seek professional help", "online tutorials", "OPPO")
 
@@ -120,7 +178,63 @@ phone1.register_phone()
 print ("To Register the Cellphone: ", phone1.register)
 
 
+print()
+print("---------------------------") # added this for division of classes
+        
+# The Cooking Class
 
+cooking1 = Cooking ("Sinigang ", 1, 10, 0, 0)
+        
+print("The Cellphone Class")
+ 
+cooking1.food_name() #this first then print 
+print ("Recipe name: ",cooking1.name) 
+
+cooking1.meal_prep() 
+print ("Meal Prep Time: ",cooking1.time, " minutes") 
+
+cooking1.pan_amount() 
+print ("Use ", cooking1.tools, " pans for this recipe")
+
+cooking1.add_sugar() 
+print ("If sour, add ", cooking1.sour, " tbsps")
+
+cooking1.add_water() 
+print ("If salty, add ", cooking1.salty, " cups")
+
+"""
+Attributes and methods of cooking are constructed based on our observations in cooking food. For example, when the food is too sour, the method to resolve it is by adding something sweet like sugar. Learning other food techniques also helped us to form the attributes and methods. 
+"""
+
+
+print()
+print("---------------------------") # added this for division of classes
+
+#The Color Class
+
+color1 = Color("Green", "Orange", "Purple", 10, 4) 
+
+print("The Color Class")
+
+#PRINT color combination equations  
+color1.blue_yellow()
+print (color1.green) 
+
+color1.yellow_red()
+print (color1.orange)
+
+color1.red_blue()
+print (color1.purple)
+
+color1.add_white()
+print ("For Tint... ", "Add White = ", color1.tint)
+
+color1.add_black()
+print ("For Shade... ", "Add Black = ", color1.shade)
+
+""" 
+Attributes and methods for colors were influenced by the color wheel. To create colors, a certain mixture of pigments is needed to develop the desired color. Color combinations help produce hue, tint, and shades. 
+"""
 
 
 
