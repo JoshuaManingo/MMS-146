@@ -1,0 +1,62 @@
+# The Dog Class
+class Dog:
+	def __init__(self, n, m, s, c, b):
+		self.__name = n #private variable
+		self.meal = m
+		self.size = s
+		self.color = c
+		self.__breed = b #private variable
+		
+	def set_name(self,n):#the setter method
+		self.__name= n 
+	
+	def get_name(self):#the getter method
+	    print(self.__name)
+	    
+	def set_breed(self,b): #the setter method
+	    self.__breed = b 
+	    
+	def get_breed(self):#the getter method
+	    print(self.__breed)
+
+	def define_size(self):
+		print(self.size)
+	    
+	def define_color(self):
+	   	print(self.color)
+
+	    
+class K9(Dog): #child class
+	def __init__(self,f, t, n, m, s, c, b):
+	    	super().__init__(n, m, s, c, b)
+	    	self.friendly = f
+	    	self.trainability = t
+		
+	def rate_friendliness(self):
+		print(self.friendly)
+	
+	def rate_trainability(self):
+	    print(self.trainability)
+	    
+#Although all dogs can have ratings of irendliness and trainabiity, they're not really necessary to know as much as dogs being trained for k9 thus making these attributes in the k9 child class
+
+# Not all Dogs are K9 but all K9 are dogs. Therefore, K9 can have all the other attributes belong in the parent class
+
+Dog1 = Dog("Pixie", "dog food ","large", "Brown and Black", " German Shepherd" )
+Dog2 = K9("very friendly", "highly trainable", "Pixie", "dog food ","large", " Brown and Black", " German Shepherd" )
+
+
+Dog2.set_name("Artemis")
+Dog2.get_name()
+Dog2.set_breed("Belgian Malinois")
+Dog2.get_breed()
+
+Dog2.define_color()
+Dog2.define_size()
+Dog2.rate_friendliness()
+Dog2.rate_trainability()
+
+""" 
+Dog2 can acquire the information from Dog1 attributes because of inheritance, the private variables however have only become accessible because of "GET" through encapsulation
+"""
+
