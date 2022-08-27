@@ -1,3 +1,4 @@
+
 # The Dog Class
 class Dog:
 	def __init__(self, n, m, s, c, b):
@@ -42,6 +43,72 @@ class K9(Dog): #child class
 
 # Not all Dogs are K9 but all K9 are dogs. Therefore, K9 can have all the other attributes belong in the parent class
 
+
+# The Plant Class 
+
+class Plant: # PARENT Class
+    def __init__(self,n,t,c,l,w): 
+        self.__name = n # private variable - name
+        self.__type = t # private variable - type
+        self.color = c 
+        self.light = l
+        self.water = w 
+        
+    def set_name(self, n): # use setter method here - name
+        self.__name = n
+		
+    def get_name(self): # use getter method here
+        print(self.__name) 
+        
+    def set_type(self, t): # use setter method here - type
+        self.__type = t
+		
+    def get_type(self): # use getter method here
+        print(self.__type)
+    
+    def define_color(self):
+        print(self.color)
+        
+    def define_light(self): 
+        print(self.light)
+        
+    def define_water(self):
+        print(self.water) 
+
+class Pothos(Plant): # CHILD Class 
+    def __init__(self, d, o, n, t, c, l, w):
+        super().__init__(n,t,c,l,w) # inheritance 
+        self.development = d 
+        self.origin = o
+        
+    def rate_mature(self):
+        print(self.development)
+	
+    def rate_native(self):
+	    print(self.origin)
+
+#Even though most pothos plants are found in China, India, Southeast Asia, Australia, New Guinea, and the West Pacific, the Cebu Blue Pothos is a species of pothos that is native to the Cebu Islands of the Philippines. 
+
+#Plant development is added because not all pothos plants can develop fenestrations as they mature. 
+
+"""        
+name "Cebu Blue Pothos" (or blue pothos) >>PLANT 2
+type "Epiremnum Pinnatum" (or dragon’s tail pothos) 
+color "silvery blue-green" 
+light "bright, indirect"
+water "1-2 weeks"
+development/mature - "fenestrations or leaf holes"
+origin - native location - "Cebu, Philippines"
+""" 
+
+
+
+#Main Program
+
+print ("The Dog Class")
+
+print() # added this for space
+
 Dog1 = Dog("Pixie", "dog food ","large", "Brown and Black", " German Shepherd" )
 Dog2 = K9("very friendly", "highly trainable", "Pixie", "dog food ","large", " Brown and Black", " German Shepherd" )
 
@@ -60,3 +127,32 @@ Dog2.rate_trainability()
 Dog2 can acquire the information from Dog1 attributes because of inheritance, the private variables however have only become accessible because of "GET" through encapsulation
 """
 
+
+# Plant1 = Plant("Pothos", t, c, l, w)
+Plant1 = Plant("Pothos", "Epipremnum Aureum", "green", "medium to bright; indirect" , "1x weeks")
+
+# Plant2 = Pothos(d, o, n, t, c, l, w)
+Plant2 = Pothos( "fenestration or leaf holes", "Cebu, Philippines", "Blue Pothos", "Dragon s Tail Pothos", "silvery blue-green", "bright, indirect", "1-2x weeks") 
+
+print() # added this for space
+print() # added this for space
+
+print("The Plant Class")
+print() # added this for space
+
+Plant2.set_name("Cebu Blue Pothos")
+Plant2.get_name()
+
+Plant2.set_type("Epiremnum Pinnatum")
+Plant2.get_type()
+
+Plant2.define_color()
+Plant2.define_light()
+Plant2.define_water()
+Plant2.rate_mature()
+Plant2.rate_native()
+
+"""
+(INHERITANCE) Plant2 will inherit the attributes of Plant1 because Plant2 is also part of the Pothos family. 
+(ENCAPSULATION) Names and type of Plant 1 and 2 are private variables, and can only be accessed through setter/getter method.
+"""
